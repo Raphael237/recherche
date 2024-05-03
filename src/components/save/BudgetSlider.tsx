@@ -42,7 +42,7 @@ const BudgetSlider: React.FC = () => {
                     defaultValue={0}
                     onChange={handleSliderChange}
                 />
-                <div className="text-center mt-4 text-sm text-gray-700 font-bold p-2 bg-gray-300 rounded-full">
+                <div className="text-center mt-4 text-xs text-gray-700 font-bold p-2 bg-gray-300 rounded-full">
                     {formatPrice(price)}
                 </div>
             </div>
