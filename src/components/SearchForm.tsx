@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
-import { BedDoubleIcon, CalendarIcon } from "lucide-react";
+import { CalendarIcon } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { format } from "date-fns";
 
@@ -14,14 +14,12 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Calendar } from "./ui/calendar";
 import BudgetSlider from "@/components/save/BudgetSlider";
-import Passenger from "@/components/save/Passenger";
 import { useState } from 'react';
 
 
@@ -144,7 +142,7 @@ function SearchForm() {
                   )}
                   />
                       <button className="absolute inset-y-0 right-0 flex items-center pr-4"
-                              id="headlessui-combobox-button-:r5:" type="button" tabIndex="-1" aria-haspopup="listbox"
+                              id="headlessui-combobox-button-:r5:" type="button" tabIndex={0} aria-haspopup="listbox"
                               aria-expanded="true" data-headlessui-state="open"
                               aria-controls="headlessui-combobox-options-:rn:">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
@@ -172,14 +170,14 @@ function SearchForm() {
                           )}
                       />
                       <button className="absolute inset-y-0 right-0 flex items-center pr-4"
-                              id="headlessui-combobox-button-:r5:" type="button" tabIndex="-1" aria-haspopup="listbox"
+                              id="headlessui-combobox-button-:r5:" type="button" tabIndex={0} aria-haspopup="listbox"
                               aria-expanded="true" data-headlessui-state="open"
                               aria-controls="headlessui-combobox-options-:rn:">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                                stroke="currentColor" aria-hidden="true" className="h-5 w-5 text-gray-500">
-                              <path stroke-linecap="round" stroke-linejoin="round"
+                              <path strokeLinecap="round" strokeLinejoin="round"
                                     d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                              <path stroke-linecap="round" stroke-linejoin="round"
+                              <path strokeLinecap="round" strokeLinejoin="round"
                                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
                           </svg>
                       </button>
@@ -250,9 +248,9 @@ function SearchForm() {
                                   onClick={toggleDropdown}>
                                   <span>{label}
                                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                           stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                           strokeWidth="1.5" stroke="currentColor" aria-hidden="true"
                                            className="h-5 w-5 text-gray-500 shrink-0">
-                                      <path stroke-linecap="round" stroke-linejoin="round"
+                                      <path strokeLinecap="round" strokeLinejoin="round"
                                             d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
                                   </svg></span>
 
@@ -313,7 +311,8 @@ function SearchForm() {
                   <BudgetSlider/>
                   <div className="relative w-full md:w-[48%] xxl:w-[17%] shrink-0 justify-end">
                       <Button type="submit" className="bg-blue-500 mt-auto text-base text-white ">
-                          <span color={"white"}>Search </span><img src="/search.svg" alt="SearchIcon"
+                          <span color={"white"} className="m-1">Search </span>
+                          <img src="/search.svg" alt="SearchIcon"
                                                                    width="20em"
                                                                    height="20em" className="invert"/>
                       </Button>
