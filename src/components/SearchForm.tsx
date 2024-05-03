@@ -183,7 +183,7 @@ function SearchForm() {
                       </button>
                   </div>
                   <div
-                      className="w-full md:w-[48%] xxl:w-[17%] flex pl-2 pr-3 justify-between rounded-xl sm:text-sm bg-[var(--bg-1)] border bg-white text-gray-500 ">
+                      className="w-full md:w-[48%] xxl:w-[17%] flex pl-2 pr-3 justify-between rounded-lg sm:text-sm bg-[var(--bg-1)] border bg-white text-gray-500 ">
                       <FormField
                           control={form.control}
                           name="dates"
@@ -240,24 +240,23 @@ function SearchForm() {
                       />
                   </div>
 
-                  <div className="relative inline-block text-left w-full md:w-[48%] xxl:w-[17%] shrink-0 justify-between rounded-3xl border bg-[var(--bg-1)]">
+                  <div className="relative inline-block text-left w-full md:w-[48%] xxl:w-[17%] shrink-0 justify-between rounded-lg border bg-[var(--bg-1)]">
                       <div className="grid ">
                           <div className="relative">
                               <button
-                                  className="bg-white text-left w-full hover:bg-gray-100 font-normal py-2 px-4 rounded text-gray-500 text-sm"
+                                  className="bg-white w-full hover:bg-gray-100 font-normal py-2 px-4 rounded-lg text-gray-500 text-sm flex justify-between items-center"
                                   onClick={toggleDropdown}>
-                                  <span>{label}
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                           strokeWidth="1.5" stroke="currentColor" aria-hidden="true"
-                                           className="h-5 w-5 text-gray-500 shrink-0">
+                                  <span>{label}</span>
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                       strokeWidth="1.5" stroke="currentColor" aria-hidden="true"
+                                       className="h-5 w-5 text-gray-500 shrink-0">
                                       <path strokeLinecap="round" strokeLinejoin="round"
                                             d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                                  </svg></span>
-
+                                  </svg>
                               </button>
                               {showDropdown && (
                                   <div
-                                      className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-md">
+                                      className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-md">
                                       <div className="p-2 text-gray-500">
                                           <div className="flex items-center">
                                               <label className="text-gray-500">Disabled</label>
@@ -265,7 +264,7 @@ function SearchForm() {
                                                   type="number"
                                                   value={disabled}
                                                   onChange={(e) => setDisabled(Number(e.target.value))}
-                                                  className="ml-auto w-12 border border-gray-300 rounded p-1"
+                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
                                               />
                                           </div>
                                           <div className="flex items-center">
@@ -274,7 +273,7 @@ function SearchForm() {
                                                   type="number"
                                                   value={luggages}
                                                   onChange={(e) => setLuggages(Number(e.target.value))}
-                                                  className="ml-auto w-12 border border-gray-300 rounded p-1"
+                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
                                               />
                                           </div>
                                           <div className="flex items-center">
@@ -283,7 +282,7 @@ function SearchForm() {
                                                   type="number"
                                                   value={adults}
                                                   onChange={(e) => setAdults(Number(e.target.value))}
-                                                  className="ml-auto w-12 border border-gray-300 rounded p-1"
+                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
                                               />
                                           </div>
                                           <div className="flex items-center">
@@ -292,12 +291,12 @@ function SearchForm() {
                                                   type="number"
                                                   value={children}
                                                   onChange={(e) => setChildren(Number(e.target.value))}
-                                                  className="ml-auto w-12 border border-gray-300 rounded p-1"
+                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
                                               />
                                           </div>
                                       </div>
                                       <button
-                                          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-b"
+                                          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
                                           onClick={updateValues}
                                       >
                                           Update
@@ -311,7 +310,7 @@ function SearchForm() {
                   <BudgetSlider/>
                   <div className="relative w-full md:w-[48%] xxl:w-[17%] shrink-0 justify-end">
                       <Button type="submit" className="bg-blue-500 mt-auto text-base text-white ">
-                          <span color={"white"} className="m-1">Search </span>
+                          <span color={"white"} className="mr-1">Search </span>
                           <img src="/search.svg" alt="SearchIcon"
                                                                    width="20em"
                                                                    height="20em" className="invert"/>
