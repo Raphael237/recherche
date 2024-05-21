@@ -22,7 +22,7 @@ const products = [
     icon: HomeIcon,
   },
   {
-    name: "Book a Flight",
+    name: "Book a Ticket",
     description: "Speak directly to your customers",
     href: "#",
     icon: PaperAirplaneIcon,
@@ -140,16 +140,16 @@ function Header() {
           </Popover>
 
           <a href="#" className="text-sm font-semibold leading-6 text-white">
-            Flights
+            Travel agencies
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-white">
-            Car Rentals
+            vehicle Rentals
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-white">
             Attractions
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-white">
-            Flight + Hotel
+            Airport taxi
           </a>
         </Popover.Group>
 
@@ -223,13 +223,13 @@ function Header() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-blue-800"
                 >
-                  Flights
+                  Travel agencies
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-blue-800"
                 >
-                  Car Rentals
+                  Vehicle Rentals
                 </a>
                 <a
                   href="#"
@@ -241,7 +241,7 @@ function Header() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-blue-800"
                 >
-                  Flight + Hotel
+                  Airport taxi
                 </a>
               </div>
 
