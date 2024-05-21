@@ -45,12 +45,16 @@ destination: z.string().min(2).max(50),
   disabled: z.string().min(0, {
     message: "Please select the number of disabled people",
   }),
+  animals: z.string().min(0, {
+    message: "Please select the number of disabled people",
+  }),
 });
 
 function SearchForm() {
   const router = useRouter();
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
+    const [animals, setAnimals] = useState(0);
     const [luggages, setLuggages] = useState(0);
     const [disabled, setDisabled] = useState(0);
     const [showDropdown, setShowDropdown] = useState(false);
@@ -61,13 +65,13 @@ function SearchForm() {
 
     const updateValues = () => {
         // Mettez à jour les valeurs des différents attributs ici
-        const label = `${adults} Adult - ${children} Children - ${disabled} Disabled - ${luggages} Luggages`;
+        const label = `${adults} Adult - ${children} Children - ${disabled} Disabled - ${luggages} Luggages - ${animals} Animals`;
         setLabel(label);
         toggleDropdown();
     };
 
     const [label, setLabel] = useState(
-        `${adults} Adult - ${children} Children - ${disabled} Disabled - ${luggages} Luggages`
+        `${adults} Adult - ${children} Children - ${disabled} Disabled - ${luggages} Luggages - ${animals} Animals`
     );
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -82,7 +86,8 @@ function SearchForm() {
       adults: "1",
       children: "0",
       luggages: "0",
-      disabled: "0"
+      disabled: "0",
+      animals: "0"
     },
   });
 
@@ -106,6 +111,7 @@ function SearchForm() {
     url.searchParams.set("group_children", values.children);
     url.searchParams.set("no_luggages", values.luggages);
     url.searchParams.set("no_disabled", values.disabled);
+    url.searchParams.set("no_animals", values.animals);
     url.searchParams.set("checkin", checkin);
     url.searchParams.set("checkout", checkout);
 
@@ -115,16 +121,35 @@ function SearchForm() {
   return (
       <div className="border-[2px] border-solid border-slate-500 rounded-xl p-3 md:p-5 flex-col sm:flex-row gap-3 sm:gap-5 text-lg bg-gray-200">
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">
-              <label className="mr-2">
-                  <input type="radio" name="priority" value="normal" defaultChecked/> Normal
+            <div className="flex justify-start">
+              <label className="mr-2 mt-2">
+                  <input type="radio" name="priority" value="classic" defaultChecked/> Classic
               </label>
-              <label className="mr-2">
+              <label className="mr-2 mt-2">
+                  <input type="radio" name="priority" value="intermediary"/> Intermediary
+              </label>
+              <label className="mr-2 mt-2">
                   <input type="radio" name="priority" value="vip"/> VIP
               </label>
-              <label>
-                  <input type="radio" name="priority" value="emergency"/> Emergency
-              </label>
+            </div>
+
+            <div className="flex">  
+                <div>
+                    <input type="radio" name="option" id="1" value="1" className="peer hidden" defaultChecked/>
+                    <label htmlFor="1" className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Return trip</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="option" id="2" value="2" className="peer hidden" />
+                    <label htmlFor="2" className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">One way</label>
+                
+                </div>
+
+                </div>
           </div>
+
+    
+
           <Form {...form} >
               <form
                   onSubmit={form.handleSubmit(onSubmit)}
@@ -256,7 +281,7 @@ function SearchForm() {
                               </button>
                               {showDropdown && (
                                   <div
-                                      className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-md">
+                                      className="absolute right-0 mt-2 w-48 z-10 bg-white border border-gray-300 rounded-lg shadow-md">
                                       <div className="p-2 text-gray-500">
                                           <div className="flex items-center">
                                               <label className="text-gray-500">Disabled</label>
@@ -291,6 +316,15 @@ function SearchForm() {
                                                   type="number"
                                                   value={children}
                                                   onChange={(e) => setChildren(Number(e.target.value))}
+                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
+                                              />
+                                          </div>
+                                          <div className="flex items-center">
+                                              <label className="text-gray-500">Animals</label>
+                                              <input
+                                                  type="number"
+                                                  value={animals}
+                                                  onChange={(e) => setAnimals(Number(e.target.value))}
                                                   className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
                                               />
                                           </div>

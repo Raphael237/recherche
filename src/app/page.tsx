@@ -11,11 +11,11 @@ export default function Home() {
           </h3>
         </section>
 
-        <section className="m-4 mt-0 -mb-14 px-2 lg:px-4">
+        <section className="mx-auto max-w-7xl  mt-0 -mb-14 px-2 lg:px-4">
           <SearchForm />
         </section>
 
-        <section className="mx-auto max-w-7xl mt-10 p-6 bg-white rounded-t-lg">
+        <section className=" mt-10 p-6 bg-white rounded-t-lg">
           <div className="pt-5">
             <h3 className="text-xl font-bold">Trending travellers</h3>
             <p className="font-light">
