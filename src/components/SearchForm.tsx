@@ -119,33 +119,42 @@ function SearchForm() {
   }
 
   return (
+
       <div className="border-[2px] border-solid border-slate-500 rounded-xl p-3 md:p-5 flex-col sm:flex-row gap-3 sm:gap-5 text-lg bg-gray-200">
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">
-            <div className="flex justify-start">
-              <label className="mr-2 mt-2">
-                  <input type="radio" name="priority" value="classic" defaultChecked/> Classic
-              </label>
-              <label className="mr-2 mt-2">
-                  <input type="radio" name="priority" value="intermediary"/> Intermediary
-              </label>
-              <label className="mr-2 mt-2">
-                  <input type="radio" name="priority" value="vip"/> VIP
-              </label>
-            </div>
-
-            <div className="flex">  
-                <div>
-                    <input type="radio" name="option" id="1" value="1" className="peer hidden" defaultChecked/>
-                    <label htmlFor="1" className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Return trip</label>
+        <div className="flex justify-between flex-col sm:flex-row gap-3 sm:gap-5">
+            
+                <div className="flex justify-start">
+                    <label className="mr-2 mt-2">
+                        <input type="radio" name="priority" value="classic" defaultChecked/> Classic
+                    </label>
+                    <label className="mr-2 mt-2">
+                        <input type="radio" name="priority" value="intermediary"/> Intermediary
+                    </label>
+                    <label className="mr-2 mt-2">
+                        <input type="radio" name="priority" value="vip"/> VIP
+                    </label>
+                    <label className="mr-2 mt-2">
+                        <input type="radio" name="priority" value="intermediary"/>Premium
+                    </label>
+                    <label className="mr-2 mt-2">
+                        <input type="radio" name="priority" value="vip"/> Top
+                    </label>
                 </div>
 
-                <div>
-                    <input type="radio" name="option" id="2" value="2" className="peer hidden" />
-                    <label htmlFor="2" className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">One way</label>
-                
-                </div>
+                <div className="flex">  
+                    <div>
+                        <input type="radio" name="option" id="1" value="1" className="peer hidden" defaultChecked/>
+                        <label htmlFor="1" className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Return trip</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="option" id="2" value="2" className="peer hidden" />
+                        <label htmlFor="2" className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">One way</label>
+                    
+                    </div>
 
                 </div>
+            
           </div>
 
     
