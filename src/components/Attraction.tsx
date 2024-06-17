@@ -50,7 +50,7 @@ destination: z.string().min(2).max(50),
   }),
 });
 
-function SearchForm() {
+function Attraction() {
   const router = useRouter();
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
@@ -120,44 +120,8 @@ function SearchForm() {
 
   return (
 
-      <div className="border-[2px] border-solid border-slate-500 rounded-xl p-3 md:p-5 flex-col sm:flex-row gap-3 sm:gap-5 text-lg bg-gray-200">
-        <div className="flex justify-between flex-col sm:flex-row gap-3 sm:gap-5">
-            
-                <div className="flex justify-start">
-                    <label className="mr-2 mt-2">
-                        <input type="radio" name="priority" value="classic" defaultChecked/> Classic
-                    </label>
-                    <label className="mr-2 mt-2">
-                        <input type="radio" name="priority" value="intermediary"/> Intermediary
-                    </label>
-                    <label className="mr-2 mt-2">
-                        <input type="radio" name="priority" value="vip"/> VIP
-                    </label>
-                    <label className="mr-2 mt-2">
-                        <input type="radio" name="priority" value="intermediary"/>Premium
-                    </label>
-                    <label className="mr-2 mt-2">
-                        <input type="radio" name="priority" value="vip"/> Top
-                    </label>
-                </div>
-
-                <div className="flex">  
-                    <div>
-                        <input type="radio" name="option" id="1" value="1" className="peer hidden" defaultChecked/>
-                        <label htmlFor="1" className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">Round trip</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" name="option" id="2" value="2" className="peer hidden" />
-                        <label htmlFor="2" className="block cursor-pointer select-none rounded-xl p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white">One way</label>
-                    
-                    </div>
-
-                </div>
-            
-          </div>
-
-    
+      <div className="border-[2px] border-solid border-slate-500 rounded-xl p-3 md:p-5 flex-col sm:flex-row gap-3 sm:gap-5 text-lg bg-gray-200 ">
+       
 
           <Form {...form} >
               <form
@@ -278,81 +242,6 @@ function SearchForm() {
                       />
                   </div>
 
-                  <div className="relative flex-auto text-left w-full md:w-[30%] xl:w-[20%] justify-between rounded-lg border bg-[var(--bg-1)]">
-                      
-                              <button
-                                  className="bg-white w-full hover:bg-gray-100 font-normal py-2 px-4 rounded-lg text-gray-500 text-sm flex justify-between items-center"
-                                  onClick={toggleDropdown}>
-                                  <span className="text-xs">{label}</span>
-                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                       strokeWidth="1.5" stroke="currentColor" aria-hidden="true"
-                                       className="h-5 w-5 text-gray-500 shrink-0">
-                                      <path strokeLinecap="round" strokeLinejoin="round"
-                                            d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-                                  </svg>
-                              </button>
-                              {showDropdown && (
-                                  <div
-                                      className="absolute right-0 mt-2 w-48 z-10 bg-white border border-gray-300 rounded-lg shadow-md">
-                                      <div className="p-2 text-gray-500">
-                                          <div className="flex items-center">
-                                              <label className="text-gray-500">Disabled</label>
-                                              <input
-                                                  type="number"
-                                                  value={disabled}
-                                                  onChange={(e) => setDisabled(Number(e.target.value))}
-                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
-                                              />
-                                          </div>
-                                          <div className="flex items-center">
-                                              <label className="text-gray-500">Luggages</label>
-                                              <input
-                                                  type="number"
-                                                  value={luggages}
-                                                  onChange={(e) => setLuggages(Number(e.target.value))}
-                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
-                                              />
-                                          </div>
-                                          <div className="flex items-center">
-                                              <label className="text-gray-500">Adults</label>
-                                              <input
-                                                  type="number"
-                                                  value={adults}
-                                                  onChange={(e) => setAdults(Number(e.target.value))}
-                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
-                                              />
-                                          </div>
-                                          <div className="flex items-center">
-                                              <label className="text-gray-500">Children</label>
-                                              <input
-                                                  type="number"
-                                                  value={children}
-                                                  onChange={(e) => setChildren(Number(e.target.value))}
-                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
-                                              />
-                                          </div>
-                                          <div className="flex items-center">
-                                              <label className="text-gray-500">Animals</label>
-                                              <input
-                                                  type="number"
-                                                  value={animals}
-                                                  onChange={(e) => setAnimals(Number(e.target.value))}
-                                                  className="ml-auto w-12 border border-gray-300 rounded-lg p-1"
-                                              />
-                                          </div>
-                                      </div>
-                                      <button
-                                          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
-                                          onClick={updateValues}
-                                      >
-                                          Update
-                                      </button>
-                                  </div>
-                              )}
-                         
-                  </div>
-
-                  <BudgetSlider/>
                   <div className="relative flex-auto w-full md:w-[30%] xl:w-[20%] justify-end">
                       <Button type="submit" className="bg-blue-500 mt-auto text-base text-white ">
                           <span color={"white"} className="mr-1">Search </span>
@@ -372,4 +261,4 @@ function SearchForm() {
     ;
 }
 
-export default SearchForm;
+export default Attraction;
